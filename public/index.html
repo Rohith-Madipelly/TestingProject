@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stopwatch, Video, and Quiz</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        #video {
+            height: 600px;
+            width: 500px;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Local video -->
+    <video id="video" controls onended="showQuiz()">
+        <source src="video\1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <form id="quiz-form" style="display: none;">
+        <div id="question-container">
+            <p>Here is your question:</p>
+            <p>How many cars are there??</p>
+        </div>
+        <label>
+            <input type="radio" name="answer" value="two"> two
+        </label><br>
+        <label>
+            <input type="radio" name="answer" value="four"> four
+        </label><br>
+        <label>
+            <input type="radio" name="answer" value="three"> three
+        </label><br>
+        <label>
+            <input type="radio" name="answer" value="fifteen"> fifteen
+        </label><br><br>
+        <button type="button" id="submit-button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="display" style="display: none;"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
